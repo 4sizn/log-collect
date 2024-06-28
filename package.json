@@ -2,6 +2,7 @@
   "name": "@4sizn/log-collect",
   "module": "out/index.js",
   "version": "1.0.0",
+  "private": false,
   "description": "log collect",
   "keywords": [
     "log",
