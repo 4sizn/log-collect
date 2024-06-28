@@ -1,6 +1,7 @@
 {
   "name": "log-collect",
   "module": "index.ts",
+  "version": "1.0.0",
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
