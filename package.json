@@ -1,12 +1,22 @@
 {
   "name": "log-collect",
-  "module": "index.ts",
+  "module": "out/index.js",
   "version": "1.0.0",
+  "description": "log collect",
+  "keywords": [
+    "log",
+    "collect"
+  ],
+  "author": {
+    "name": "4sizn",
+    "email": "4sizn@naver.com"
+  },
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@types/bun": "latest"
   },
+  "license": "MIT",
   "scripts": {
     "build": "bun run bun-build.ts"
   },
