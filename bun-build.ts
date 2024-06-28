@@ -1,6 +1,6 @@
 try {
   const result = await Bun.build({
-    entrypoints: ["index.ts"],
+    entrypoints: ["src/Console/index.ts"],
     outdir: "./out",
     format: "esm",
     target: "browser",

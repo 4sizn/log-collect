@@ -1,5 +1,5 @@
 import { describe, beforeEach, expect, test } from "bun:test";
-import { consoleHistory } from "./index";
+import { consoleHistory } from "./src/Console/index.ts";
 
 describe("Console history tracking", () => {
   beforeEach(() => {
