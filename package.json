@@ -1,5 +1,5 @@
 {
-  "name": "@4sizn/log-collect",
+  "name": "log-collect-fe",
   "module": "out/index.js",
   "version": "1.0.0",
   "private": false,
