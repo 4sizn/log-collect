@@ -8,11 +8,7 @@
  * console 매서드를 여기서 가공하지 않고, method와 인수를 받아, consumer쪽에서 가공하도록 처리하자.
  */
 export declare const consoleHistory: {
-  method: keyof Console;
-  args: any[];
+    method: keyof Console;
+    args: any[];
 }[];
 export declare const originalConsole: Console;
-export declare function readFormat(data: {
-  method: keyof Console;
-  args: any[];
-}): any;

@@ -14,6 +14,9 @@
 export const consoleHistory = [] as { method: keyof Console; args: any[] }[];
 export const originalConsole = {} as Console;
 
+/**
+ * monkey patching을 통해 console의 메서드를 가공하여 consoleHistory에 저장하고, 원래의 console 메서드를 실행한다.
+ */
 for (const key in console) {
   if (typeof console[key] === "function") {
     originalConsole[key] = console[key];
@@ -23,19 +26,8 @@ for (const key in console) {
 for (const key in console) {
   if (typeof console[key] === "function") {
     console[key as keyof Console] = (...args) => {
-      readFormat({ method: key, args });
+      originalConsole[key as keyof Console].apply(console, args);
       consoleHistory.push({ method: key, args });
     };
   }
-}
-
-export function readFormat(data: {
-  method: keyof Console;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  args: any[];
-}) {
-  return originalConsole[data.method as keyof Console].apply(
-    console,
-    data.args
-  );
 }
