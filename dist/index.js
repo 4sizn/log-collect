@@ -1,4 +1,7 @@
 // src/Console/index.ts
+function readFormat(data) {
+  return originalConsole[data.method].apply(console, data.args);
+}
 var consoleHistory = [];
 var originalConsole = {};
 for (const key in console) {
@@ -9,12 +12,10 @@ for (const key in console) {
 for (const key in console) {
   if (typeof console[key] === "function") {
     console[key] = (...args) => {
-      originalConsole[key].apply(console, args);
+      readFormat({ method: key, args });
       consoleHistory.push({ method: key, args });
     };
   }
 }
-export {
-  originalConsole,
-  consoleHistory
-};
+
+export { readFormat, originalConsole, consoleHistory };

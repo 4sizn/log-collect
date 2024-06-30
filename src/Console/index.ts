@@ -11,8 +11,8 @@
  */
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export const consoleHistory = [] as { method: string; args: any[] }[];
-export const originalConsole = {};
+export const consoleHistory = [] as { method: keyof Console; args: any[] }[];
+export const originalConsole = {} as Console;
 
 for (const key in console) {
   if (typeof console[key] === "function") {
@@ -23,8 +23,19 @@ for (const key in console) {
 for (const key in console) {
   if (typeof console[key] === "function") {
     console[key as keyof Console] = (...args) => {
-      originalConsole[key as keyof Console].apply(console, args);
+      readFormat({ method: key, args });
       consoleHistory.push({ method: key, args });
     };
   }
+}
+
+export function readFormat(data: {
+  method: keyof Console;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  args: any[];
+}) {
+  return originalConsole[data.method as keyof Console].apply(
+    console,
+    data.args
+  );
 }

@@ -12,3 +12,7 @@ export declare const consoleHistory: {
     args: any[];
 }[];
 export declare const originalConsole: {};
+export declare function readFormat(data: {
+    method: string;
+    args: any[];
+}): any;

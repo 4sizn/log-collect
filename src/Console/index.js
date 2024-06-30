@@ -24,3 +24,6 @@ for (const key in console) {
         };
     }
 }
+export function readFormat(data) {
+    return originalConsole[data.method].apply(console, data.args);
+}
