@@ -1,6 +1,7 @@
 {
   "name": "log-collect-fe",
-  "module": "out/index.js",
+  "module": "dist/index.js",
+  "type": "module",
   "version": "1.0.0",
   "private": false,
   "description": "log collect",
@@ -12,14 +13,13 @@
     "name": "4sizn",
     "email": "4sizn@naver.com"
   },
-  "type": "module",
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@types/bun": "latest"
   },
   "license": "MIT",
   "scripts": {
-    "build": "bun run bun-build.ts"
+    "build": "bun run bun-build.ts && tsc"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
