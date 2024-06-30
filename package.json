@@ -2,7 +2,7 @@
   "name": "log-collect-fe",
   "module": "dist/index.js",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "private": false,
   "description": "log collect",
   "keywords": [
@@ -13,6 +13,9 @@
     "name": "4sizn",
     "email": "4sizn@naver.com"
   },
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@types/bun": "latest"
@@ -22,6 +25,6 @@
     "build": "bun run bun-build.ts && tsc"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.5.2"
   }
 }
